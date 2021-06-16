@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>nEditMatrix</class>
+ <widget class="QWidget" name="nEditMatrix">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Matrix</string>
+  </property>
+  <property name="toolTip">
+   <string>Matrix</string>
+  </property>
+  <property name="statusTip">
+   <string>Matrix</string>
+  </property>
+  <property name="whatsThis">
+   <string>Matrix</string>
+  </property>
+  <widget class="QLineEdit" name="Name">
+   <property name="geometry">
+    <rect>
+     <x>24</x>
+     <y>0</y>
+     <width>376</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Name</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="Save">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>24</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../Images/Branon.qrc">
+     <normaloff>:/images/save.png</normaloff>:/images/save.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="autoRaise">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="Type">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>24</y>
+     <width>160</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="editable">
+    <bool>true</bool>
+   </property>
+   <property name="insertPolicy">
+    <enum>QComboBox::NoInsert</enum>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Identifier">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>48</y>
+     <width>400</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Identifier</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="Row">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>24</y>
+     <width>60</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Row</string>
+   </property>
+   <property name="statusTip">
+    <string>Row</string>
+   </property>
+   <property name="whatsThis">
+    <string>Row</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+   <property name="value">
+    <number>4</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="Column">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>24</y>
+     <width>60</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Column</string>
+   </property>
+   <property name="statusTip">
+    <string>Column</string>
+   </property>
+   <property name="whatsThis">
+    <string>Column</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+   <property name="value">
+    <number>4</number>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="Position">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>24</y>
+     <width>120</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Row/column positions</string>
+   </property>
+   <property name="statusTip">
+    <string>Row/column positions</string>
+   </property>
+   <property name="whatsThis">
+    <string>Row/column positions</string>
+   </property>
+   <property name="text">
+    <string>Position</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../../Images/Branon.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>Position</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>nEditMatrix</receiver>
+   <slot>positionChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>59</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Row</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>nEditMatrix</receiver>
+   <slot>dimChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Column</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>nEditMatrix</receiver>
+   <slot>dimChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>209</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Type</sender>
+   <signal>activated(int)</signal>
+   <receiver>nEditMatrix</receiver>
+   <slot>dimChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>319</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Name</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>nEditMatrix</receiver>
+   <slot>nameChanged(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>211</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Save</sender>
+   <signal>clicked()</signal>
+   <receiver>nEditMatrix</receiver>
+   <slot>Save()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>11</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

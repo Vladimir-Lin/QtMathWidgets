@@ -1,0 +1,5 @@
+SYNCQT.HEADER_FILES = ../../include/MathWidgets/mathwidgets.h
+SYNCQT.HEADER_CLASSES = ../../include/MathWidgets/MathWidgets
+SYNCQT.PRIVATE_HEADER_FILES =
+SYNCQT.QPA_HEADER_FILES = 
+SYNCQT.INJECTIONS = 
